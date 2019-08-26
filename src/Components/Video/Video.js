@@ -2,24 +2,32 @@ import React from 'react';
 import Iframe from 'react-iframe'
 import './Video.css';
 
-class Video extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
-        }
-    }
+const VideoRender = ({videos}) => {
 
-    render() {
-        return(
-            <div>
-                <Iframe url="http://www.youtube.com/embed/9ax8ZAoiwYQ"
-                        width="450px"
-                        height="320px"
-                        id="myId"
-                        className="video"/>
+    const VideoList = videos.map(video=>{
+        return (
+            <div className='video' key={video.id}>
+                <div>
+                    <Iframe url={video.video}
+                            width="450px"
+                            height="320px"
+                            id="myId"
+                            className="video"/>
+                </div>
             </div>
         )
-    }
-}
+    });
 
-export default Video;
+    return(
+        <div className="videoRender">
+            <h1>hello</h1>
+            <div className="video">
+                {VideoList}
+
+            </div>
+        </div>
+    )
+
+};
+
+export default VideoRender;

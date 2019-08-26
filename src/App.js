@@ -1,11 +1,11 @@
 import React from 'react';
-import Video from "./Components/Video/Video";
+import VideoList from "./Components/VideoList/VideoList";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Video/>
+      <VideoList/>
     </div>
   );
 }
